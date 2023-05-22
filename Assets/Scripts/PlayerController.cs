@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent (typeof(Animator))]
 public class PlayerController : PhysicsObject
 {
     public float MaxSpeed = 5f;
@@ -9,6 +11,7 @@ public class PlayerController : PhysicsObject
 
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    private int _animatorSpeed = Animator.StringToHash("Speed");
 
     void Awake()
     {
@@ -42,7 +45,7 @@ public class PlayerController : PhysicsObject
             _spriteRenderer.flipX = !_spriteRenderer.flipX;
         }
 
-        _animator.SetFloat("Speed", Mathf.Abs(Velocity.x) / MaxSpeed);
+        _animator.SetFloat(_animatorSpeed, Mathf.Abs(Velocity.x) / MaxSpeed);
 
         TargetVelocity = move * MaxSpeed;
     }
