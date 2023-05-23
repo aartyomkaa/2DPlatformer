@@ -25,14 +25,14 @@ public class PhysicsObject : MonoBehaviour
         Rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    private void Start()
     {
         ContactFilter.useTriggers = false;
         ContactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         ContactFilter.useLayerMask = true;
     }
 
-    void Update()
+    private void Update()
     {
         TargetVelocity = Vector2.zero;
         ComputeVelocity();

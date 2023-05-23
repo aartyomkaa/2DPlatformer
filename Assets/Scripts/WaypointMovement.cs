@@ -12,7 +12,7 @@ public class WaypointMovement : MonoBehaviour
     private Transform[] _points;
     private int _currentPoint;
 
-    void Start()
+    private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -24,7 +24,7 @@ public class WaypointMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         Transform targetPoint = _points[_currentPoint];
 

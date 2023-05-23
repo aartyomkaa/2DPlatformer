@@ -13,7 +13,7 @@ public class PlayerController : PhysicsObject
     private Animator _animator;
     private int _animatorSpeed = Animator.StringToHash("Speed");
 
-    void Awake()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
