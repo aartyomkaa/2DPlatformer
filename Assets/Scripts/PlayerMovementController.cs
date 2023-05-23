@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent (typeof(Animator))]
-public class PlayerController : PhysicsObject
+public class PlayerMovementController : PhysicsObject
 {
     public float MaxSpeed = 5f;
     public float JumpSpeed = 5f;
